@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<style lang="css">
+<style>
   .page-checklist .page-part {
     margin-top: 40px;
   }
@@ -33,7 +33,6 @@
     color:black;
     height: 50px;
     text-align:center;
-    margin-top: 12px;
   }
   .mint-msgbox{
       width: 60%;
