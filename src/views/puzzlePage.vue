@@ -30,10 +30,10 @@
   }
 
   .mint-msgbox-message{
-      color:black;
-      height: 50px;
-      text-align:center;
-
+    color:black;
+    height: 50px;
+    text-align:center;
+    margin-top: 12px;
   }
   .mint-msgbox{
       width: 60%;
