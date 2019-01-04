@@ -24,18 +24,18 @@
   </div>
 </template>
 
-<style>
+<style scope="this api replaced by slot-scope in 2.5.0+">
   .page-checklist .page-part {
     margin-top: 40px;
   }
 
   .mint-msgbox-message{
     color:black;
-    height: 50px;
+    height: 50;
     text-align:center;
   }
   .mint-msgbox{
-      width: 60%;
+      width: 80%;
   }
 
   .page-title{
