@@ -56,6 +56,7 @@ export default {
 
     data() {
         return {
+            word:"",
             title:"下列哪项关于"+this.$route.params.curWord+"的描述是正确的",
             value: "",
             correctValue:"B",
@@ -68,6 +69,7 @@ export default {
     },
 
     created() {
+        this.word = this.$route.params.curWord;
         this.options3 = [
                 {
                     label: '选项F',
@@ -94,7 +96,7 @@ export default {
                     message:'Congratulations!',
                     showCancelButton:false,
                 }).then(action=>{
-                    this.$router.push("/wordpage")
+                    this.$router.push({name:"wordpage",params:{selectedword:this.word}})
                 });
             }
             else
