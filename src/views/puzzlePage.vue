@@ -2,7 +2,7 @@
   <div class="page-checklist">
 
     <mt-header style="background-color: white;" title="">
-        <router-link to="/wordpage" slot="left">
+        <router-link :to="{name:'wordpage',params:{ selectedword: this.word } }" slot="left">
             <mt-button icon="back">返回</mt-button>
         </router-link>
     </mt-header>
@@ -31,7 +31,8 @@
 
   .mint-msgbox-message{
     color:black;
-    height: 50;
+    height: 180;
+    width: 300px;
     text-align:center;
   }
   .mint-msgbox{
