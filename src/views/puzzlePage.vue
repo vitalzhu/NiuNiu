@@ -69,6 +69,10 @@ export default {
     },
 
     created() {
+        this.$storage.set('test',{key:'11111'})
+        const data = this.$storage.get('test')
+        console.log(data)
+
         this.word = this.$route.params.curWord;
         this.options3 = [
                 {
@@ -84,6 +88,7 @@ export default {
                     value: 'B'
                 }
             ];
+
         },
 
     methods:{

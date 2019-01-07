@@ -5,8 +5,14 @@ import 'mint-ui/lib/style.css'
 import App from './App.vue'
 import router from './router'
 import MintUI from 'mint-ui'
+import Vue2Storage from 'vue2-storage'
 
 Vue.use(MintUI);
+Vue.use(Vue2Storage,{
+  prefix: 'NN_',
+  driver: 'local',
+  ttl: 60 * 60 * 24 * 1000*365,
+})
 
 Vue.config.productionTip = false
 
