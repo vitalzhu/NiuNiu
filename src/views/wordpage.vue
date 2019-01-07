@@ -173,7 +173,7 @@ export default {
             this.isDisplayFloatImage = !this.isDisplayFloatImage;
             MessageBox({
             title: '',
-            message: "<img height=1% width=100% src='./static/logo.png'></img>",
+            message: "<img height=auto width=auto src='./static/logo.png'></img>",
             showCancelButton: false
             });
         },
