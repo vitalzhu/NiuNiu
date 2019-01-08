@@ -1,0 +1,20 @@
+{
+    "allWords":[
+        {
+            "word":"Always",
+            "imgUrl":"",
+            "property":"adv.",
+            "translation":"总是",
+            "explain":"all 324234234the time or very many times asdasdasdasdasdasd",
+            "videoUrl":""
+        },        
+        {
+            "word":"Apple",
+            "imgUrl":"",
+            "property":"n.",
+            "translation":"苹果",
+            "explain":"a kind of frouit asdasdasdasdasdasd",
+            "videoUrl":""
+        }
+    ]
+}

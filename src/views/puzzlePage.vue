@@ -13,12 +13,13 @@
       class="page-part"
       :title="title"
       v-model="value"
-      :options="options3">
+      :options="optiones">
     </mt-radio>
 
 
     <div>
-      <mt-cell title="选中的项">{{ value }}</mt-cell>
+      <!-- <mt-cell title="选中的项">{{ value }}</mt-cell> -->
+      <hr>
       <mt-button @click="onClickConfirm" size="large">OK</mt-button>
     </div>
   </div>
@@ -56,6 +57,7 @@ export default {
 
     data() {
         return {
+            optiones:[],
             word:"",
             title:"下列哪项关于"+this.$route.params.curWord+"的描述是正确的",
             value: "",
@@ -71,24 +73,27 @@ export default {
     created() {
         this.$storage.set('test',{key:'11111'})
         const data = this.$storage.get('test')
-        console.log(data)
+        //console.log(data)
 
         this.word = this.$route.params.curWord;
-        this.options3 = [
-                {
-                    label: '选项F',
-                    value: 'F',
-                },
-                {
-                    label: '选项A',
-                    value: 'A'
-                },
-                {
-                    label: '选项B',
-                    value: 'B'
-                }
-            ];
+        console.log(this.word)
 
+
+        this.$http.get('static/datas/puzzles.json').then(res=>
+            {
+                var datas = res.body['puzzles']
+                if(datas.length>0)
+                {
+                    for(var i =0;i<datas.length;++i)
+                    {
+                        if(datas[i].word == this.word)
+                        {
+                            this.optiones = datas[i].options
+                            this.correctValue = datas[i].correctvalue
+                        }
+                    }
+                }
+            })
         },
 
     methods:{
@@ -101,6 +106,7 @@ export default {
                     message:'Congratulations!',
                     showCancelButton:false,
                 }).then(action=>{
+                    this.$storage.set(this.word,{key:'true'})
                     this.$router.push({name:"wordpage",params:{selectedword:this.word}})
                 });
             }
@@ -116,18 +122,6 @@ export default {
             }
         },
 
-        getMessageStyle(strColor) {
-            var obj = document.getElementsByClassName("mint-msgbox-message");
-            if(obj.length == 0){
-                this.getMessageStyle();
-            }else{
-                var i;
-                for (i = 0; i < obj.length; i++) {
-                    obj[i].style.color = strColor;
-                }
-            }
-
-        },
     },    
 };
 </script>

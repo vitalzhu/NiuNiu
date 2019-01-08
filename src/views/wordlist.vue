@@ -67,5 +67,27 @@ export default {
       ]
     };
   },
+
+  created(){
+    var lesson = this.$route.params.selectedlesson
+    console.log(lesson)
+    this.$http.get('static/datas/words.json').then(res=>{
+            console.log(res.body['words'])
+            var datas = res.body['words']
+            if(datas.length>0){
+              for(var i = 0;i<datas.length;++i){
+
+                if(datas[i].lessonid == lesson)
+                {
+                    this.wordlist = datas[i].wordlist
+                    return
+                }
+                this.wordlist = datas[0].wordlist
+              }
+            }
+
+
+        })
+  },
 };
 </script>

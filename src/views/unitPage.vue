@@ -6,7 +6,7 @@
                    <a href="#" style="color:black"> {{item.name}}</a>
                 </button>
                 <div v-for="(childItem,index) in item.lessons" :key="index">
-                    <button id="lessonButton" v-if="item.isShow" @click="onClickLesson(childItem.lesson)"> 
+                    <button id="lessonButton" v-if="!item.isShow" @click="onClickLesson(childItem)"> 
                         <a href="#">{{ childItem.lesson }}</a>
                     </button>
                 </div>
@@ -52,28 +52,7 @@ export default {
             curClickName:"",
             curSecondItem:null,
  
-            unitList:[
-                {
-                    name:"第一单元",
-                    isShow:false,
-                    lessons:[
-                        {lesson:"第一课",},
-                        {lesson:"第二课",},
-                        {lesson:"第三课",},
-                        {lesson:"第四课",},
-                        ]
-                },
-                {
-                    name:"第二单元",
-                    isShow:false,
-                    lessons:[
-                        {lesson:"第五课",},
-                        {lesson:"第六课",},
-                        {lesson:"第七课",},
-                        {lesson:"第八课",},
-                    ]
-                },
-            ],
+            unitList:[],
         }
     },
 
@@ -83,8 +62,14 @@ export default {
         },
         onClickLesson(lesson){
             console.log(lesson)
-            this.$router.push({name:'WordList',params:{selectedlesson:lesson}})
+            this.$router.push({name:'WordList',params:{selectedlesson:lesson.id}})
         },
     },
+    created(){
+        this.$http.get('static/datas/data.json').then(res=>{
+            console.log(res.body['units'])
+            this.unitList = res.body['units']
+        })
+    }
 }
 </script>

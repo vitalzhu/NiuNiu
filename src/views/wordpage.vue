@@ -28,7 +28,7 @@
         </div>
 
         <div class="clear" style="clear:both"></div>
-        <div>
+        <div id = "bottomPuzzle" v-if="!isFinishPuzzle">
             <div id = "bottomContent">
                 <div>
                     <button id="puzzlebutton" @click="onClickHelp">
@@ -36,8 +36,12 @@
                     </button>
                 </div>
             </div>
-
         </div>
+
+        <div id = "bottomGift" v-if="isFinishPuzzle">
+            
+        </div>
+
     </div>
 </template>
 
@@ -139,6 +143,7 @@
 
 <script>
 import { MessageBox } from 'mint-ui';
+
 export default {
     data: function(){
         return{
@@ -153,6 +158,7 @@ export default {
             isDisplayFloatImage:false,       
             videoImag:"./static/videoIcon.png", 
             itemimgbg:"./static/imgBtnBg.png",
+            isFinishPuzzle:false,
         };
     },
     components:{
@@ -181,8 +187,28 @@ export default {
             this.$router.push({name:"puzzle",params:{curWord:this.title}})
         },
     },
+
     created:function(){
         this.title = this.$route.params.selectedword;
+        const data = this.$storage.get(this.title)
+        this.isFinishPuzzle = data == null?false:true;
+        this.$storage.remove(this.title)
+
+        this.$http.get('static/datas/wordContent.json').then(res=>{
+            var datas = res.body['allWords']
+            if(datas.length>0)
+            {
+                for(var i =0;i<datas.length;++i){
+                    if(datas[i].word == this.title)
+                    {
+                        this.property = datas[i].property
+                        this.translation = datas[i].translation
+                        this.explain = datas[i].explain
+                        return
+                    }
+                }
+            }
+        })
     },
 }
 </script>
