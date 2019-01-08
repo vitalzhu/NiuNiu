@@ -1,8 +1,10 @@
 <template>
   <div>
-    <mt-header style="background-color: white;" title="">
+    <mt-header title="">
       <router-link to="/unitPage" slot="left">
-        <mt-button icon="back">返回</mt-button>
+        <mt-button>
+          <img src=".././assets/back.png" width="24px" height="24px" alt="">
+        </mt-button>
       </router-link>
     </mt-header>
     <hr>
@@ -26,7 +28,7 @@
         padding: 0px;
         border: 1px solid transparent;
         outline: none;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
         text-align: left;
     }
 
@@ -39,11 +41,11 @@
     }
 
     .mint-button-text{
-      color: black;
+      color: rgb(14, 13, 13);
     }
-    .mint-header .mint-button{
+    /* .mint-header .mint-button{
       color: black;
-    }
+    } */
 </style>
 
 <script>

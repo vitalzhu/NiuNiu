@@ -1,9 +1,11 @@
 <template>
 
     <div id="pageBg">
-        <mt-header style="background-color: white;" title="">
+        <mt-header title="">
         <router-link to="/wordlist" slot="left">
-            <mt-button icon="back">返回</mt-button>
+            <mt-button>
+                <img src=".././assets/back.png" width="24px" height="24px" alt="">
+            </mt-button>
         </router-link>
         </mt-header>
         <!-- <hr> -->
@@ -17,10 +19,13 @@
             </div>
 
             <div id = "leftContent">
-                <h2 style="margin:10px;display:inline" id = "title">{{ title }}</h2>
-                <button id="button" @click="onClickVideo">
-                    <img :src="videoImag" alt="video" width="16px" height="16px">
-                </button>
+                <div id="wordAndBtn" style="margin-top:10px">
+                    <h2 style="margin:10px;display:inline" id = "title">{{ title }}</h2>
+                    <button id="button" @click="onClickVideo">
+                        <img :src="videoImag" alt="video" width="16px" height="16px">
+                    </button>
+                </div>
+
                 <h6 style="margin:10px" >{{property}}</h6>
                 <p id = "p">{{translation}}</p>
                 <p id="p">{{explain}}</p>
@@ -49,10 +54,6 @@
     #pageBg{
         height: 100%;
         width: 100%;
-        background-image: url('.././assets/p4.png');
-        background-size: 100% 100%;
-        background-repeat:no-repeat;
-        background-position:right top;
         margin: 0px;
     }
 

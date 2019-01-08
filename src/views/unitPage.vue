@@ -22,7 +22,7 @@
         padding: 0px;
         border: 1px solid transparent;
         outline: none;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
         text-align: left;
     }
 
@@ -33,12 +33,16 @@
         outline: none;
         width: 82%;
         text-align: left;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
     }
 
     #unit-li{
         margin: 0%;
         padding: 6px;
+    }
+
+    body{
+         background-image: url('.././assets/P4.png');
     }
 </style>
 

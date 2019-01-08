@@ -1,8 +1,10 @@
 <template>
   <div>
-    <mt-header style="background-color: white;" title="">
+    <mt-header title="">
         <router-link :to="{name:'wordpage',params:{ selectedword: this.word } }" slot="left">
-            <mt-button icon="back">返回</mt-button>
+            <mt-button>
+                <img src=".././assets/back.png" width="24px" height="24px" alt="">
+            </mt-button>
         </router-link>
     </mt-header>
     <hr>
@@ -19,7 +21,7 @@
 
     <div>
       <mt-cell></mt-cell>
-      <mt-button @click="onClickConfirm" size="large">OK</mt-button>
+      <mt-button type="default" @click="onClickConfirm" size="large">OK</mt-button>
     </div>
   </div>
 </template>
