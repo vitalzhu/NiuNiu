@@ -1,6 +1,5 @@
 <template>
-  <div class="page-checklist">
-
+  <div>
     <mt-header style="background-color: white;" title="">
         <router-link :to="{name:'wordpage',params:{ selectedword: this.word } }" slot="left">
             <mt-button icon="back">返回</mt-button>
@@ -9,6 +8,7 @@
     <hr>
 
     <div class="page-title">Puzzle</div>
+
     <mt-radio
       class="page-part"
       :title="title"
@@ -18,8 +18,7 @@
 
 
     <div>
-      <!-- <mt-cell title="选中的项">{{ value }}</mt-cell> -->
-      <hr>
+      <mt-cell></mt-cell>
       <mt-button @click="onClickConfirm" size="large">OK</mt-button>
     </div>
   </div>
@@ -40,9 +39,10 @@
       width: 80%;
   }
 
-  .page-title{
-       margin-top: 60px;
+  .mint-radiolist , .page-part{
+      text-align: left;
   }
+
 </style>
 
 <script>
