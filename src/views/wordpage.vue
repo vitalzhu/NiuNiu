@@ -135,7 +135,7 @@
         color: white;
         margin: 6px;
         margin-top: 10px;
-        background-image: url('.././assets/wordbg.png');
+        background-image: url('.././assets/propertybg.png');
         background-size: 30% 100%;
         background-repeat:no-repeat;
         background-position:left top;
