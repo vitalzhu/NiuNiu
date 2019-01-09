@@ -25,7 +25,7 @@
                     </button>
                 </div>
 
-                <h6 style="margin:10px" >{{property}}</h6>
+                <h6 id="propertyH">{{property}}</h6>
                 <p id = "p">{{translation}}</p>
                 <p id="p">{{explain}}</p>
             </div>
@@ -131,6 +131,17 @@
         top: 60px;
     }
 
+    #propertyH{
+        color: white;
+        margin: 6px;
+        margin-top: 10px;
+        background-image: url('.././assets/wordbg.png');
+        background-size: 30% 100%;
+        background-repeat:no-repeat;
+        background-position:left top;
+        padding-left: 15px;
+    }
+
     .mint-msgbox-content {
         padding: 0px;
 
@@ -149,6 +160,7 @@
     .mint-header{
       background-color: rgba(255, 255, 255, 0);
     }
+
     body{
          background-image: url('.././assets/P4.png');
     }
