@@ -46,6 +46,10 @@
     .mint-header{
       background-color: rgba(255, 255, 255, 0);
     }
+    
+    body{
+         background-image: url('.././assets/P4.png');
+    }
 </style>
 
 <script>
@@ -55,7 +59,7 @@ export default {
   methods:{
       onClickWord(word){
         console.log(word)
-        this.$router.push({name:"wordpage",params:{selectedword:word}})
+        this.$router.push({name:"wordpage",query:{selectedword:word}})
       }
   },
   data() {

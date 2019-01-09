@@ -141,7 +141,12 @@
         width:auto;
     }
 
-
+    .mint-header{
+      background-color: rgba(255, 255, 255, 0);
+    }
+    body{
+         background-image: url('.././assets/P4.png');
+    }
 </style>
 
 <script>
@@ -187,12 +192,12 @@ export default {
             });
         },
         onClickHelp(){
-            this.$router.push({name:"puzzle",params:{curWord:this.title}})
+            this.$router.push({name:"puzzle",query:{curWord:this.title}})
         },
     },
 
     created:function(){
-        this.title = this.$route.params.selectedword;
+        this.title = this.$route.query.selectedword;
         const data = this.$storage.get(this.title)
         this.isFinishPuzzle = data == null?false:true;
         this.$storage.remove(this.title)

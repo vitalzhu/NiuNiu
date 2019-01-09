@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="">
-        <router-link :to="{name:'wordpage',params:{ selectedword: this.word } }" slot="left">
+        <router-link :to="{name:'wordpage',query:{ selectedword: this.word } }" slot="left">
             <mt-button>
                 <img src=".././assets/back.png" width="24px" height="24px" alt="">
             </mt-button>
@@ -45,6 +45,13 @@
       text-align: left;
   }
 
+.mint-header{
+      background-color: rgba(255, 255, 255, 0);
+    }
+    
+    body{
+         background-image: url('.././assets/P4.png');
+    }
 </style>
 
 <script>
@@ -60,7 +67,7 @@ export default {
         return {
             optiones:[],
             word:"",
-            title:"下列哪项关于"+this.$route.params.curWord+"的描述是正确的",
+            title:"下列哪项关于"+this.$route.query.curWord+"的描述是正确的",
             value: "",
             correctValue:"B",
         };
@@ -76,7 +83,7 @@ export default {
         const data = this.$storage.get('test')
         //console.log(data)
 
-        this.word = this.$route.params.curWord;
+        this.word = this.$route.query.curWord;
         console.log(this.word)
 
 
