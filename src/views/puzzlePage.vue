@@ -38,7 +38,7 @@
     text-align:center;
   }
   .mint-msgbox{
-      width: 80%;
+      width: 72%;
   }
 
   .mint-radiolist , .page-part{
@@ -49,7 +49,6 @@
 
 <script>
 import { Toast  } from 'mint-ui';
-import { setTimeout } from 'timers';
 import { MessageBox } from 'mint-ui';
 import { create } from 'domain';
 
@@ -100,7 +99,6 @@ export default {
 
     methods:{
         onClickConfirm(){
-            console.log(this)
             if(this.value == this.correctValue)
             {
                 MessageBox({

@@ -71,7 +71,6 @@ export default {
     },
     created(){
         this.$http.get('static/datas/data.json').then(res=>{
-            console.log(res.body['units'])
             this.unitList = res.body['units']
         })
     }

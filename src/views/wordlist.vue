@@ -43,9 +43,9 @@
     .mint-button-text{
       color: rgb(14, 13, 13);
     }
-    /* .mint-header .mint-button{
-      color: black;
-    } */
+    .mint-header{
+      background-color: rgba(255, 255, 255, 0);
+    }
 </style>
 
 <script>
@@ -72,13 +72,11 @@ export default {
 
   created(){
     var lesson = this.$route.params.selectedlesson
-    console.log(lesson)
     this.$http.get('static/datas/words.json').then(res=>{
-            console.log(res.body['words'])
             var datas = res.body['words']
             if(datas.length>0){
-              for(var i = 0;i<datas.length;++i){
-
+              for(var i = 0;i<datas.length;++i)
+              {
                 if(datas[i].lessonid == lesson)
                 {
                     this.wordlist = datas[i].wordlist

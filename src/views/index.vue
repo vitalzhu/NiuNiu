@@ -12,7 +12,7 @@
   
 </template>
 
-<style>
+<style scope="this api replaced by slot-scope in 2.5.0+">
     #button{
         margin: 0px;
         padding: 0px;
@@ -20,6 +20,10 @@
         outline: none;
         background-color: white;
     }
+
+    /* body{
+         background-image: none;
+    } */
 </style>
 
 

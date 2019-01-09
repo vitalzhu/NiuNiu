@@ -15,7 +15,7 @@
                 <button id = "imgbutton"  @click="onClickImageItem">
                     <img :src="imageSrc" width="100px" height="120px" style="padding:12px">
                 </button>   
-                <div>（点击图片放大）</div>
+                <div style="font-size:2px">（点击图片放大）</div>
             </div>
 
             <div id = "leftContent">
@@ -37,7 +37,7 @@
             <div id = "bottomContent">
                 <div>
                     <button id="puzzlebutton" @click="onClickHelp">
-                        <img :src="questionImage" width="112px" height="58px">
+                        <img :src="questionImage" width="82px" height="38px">
                     </button>
                 </div>
             </div>
@@ -60,7 +60,7 @@
     #topContent
     {
         width: 100%;
-        height: 180px;
+        height: 220px;
         /* color: #2c3e50; */
         background-color:rgb(252, 252, 252);
         box-shadow: #2c3e50;
@@ -97,7 +97,7 @@
 
     #puzzlebutton{
         position: relative;
-        top: 300px;
+        top: 214px;
         left: 90px;
         margin: 0px;
         padding: 0px;
@@ -119,9 +119,11 @@
         margin-top: 15px;
         margin-bottom: 20px;
         width: 100%;
-        height: 440px;
+        height: 320px;
         background-image: url('.././assets/bottombg.png');
         background-size: 100% 100%;
+        position: relative;
+        top: 60px;
     }
 
     .mint-msgbox-content {
@@ -152,7 +154,7 @@ export default {
             imageSrc:"./static/logo.png",
             property:"adv.",
             translation:"总是",
-            explain:"all the time or very many times asdasdasdasdasdasd",
+            explain:"all the time or very many times asdasdasdasdfsdfsdfsfghghhhhhhsdasdasd",
             katongImage:"./static/logo.png",
 
             questionImage:"./static/arrow.png",
