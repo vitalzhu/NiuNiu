@@ -20,7 +20,7 @@
 
 
     <div>
-      <mt-cell></mt-cell>
+      <mt-cell>{{value}}</mt-cell>
       <mt-button type="default" @click="onClickConfirm" size="large">OK</mt-button>
     </div>
   </div>
@@ -45,7 +45,7 @@
       text-align: left;
   }
 
-.mint-header{
+    .mint-header{
       background-color: rgba(255, 255, 255, 0);
     }
     
@@ -81,11 +81,7 @@ export default {
     created() {
         this.$storage.set('test',{key:'11111'})
         const data = this.$storage.get('test')
-        //console.log(data)
-
         this.word = this.$route.query.curWord;
-        console.log(this.word)
-
 
         this.$http.get('static/datas/puzzles.json').then(res=>
             {

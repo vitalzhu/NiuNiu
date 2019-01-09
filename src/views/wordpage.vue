@@ -9,15 +9,14 @@
         </router-link>
         </mt-header>
         <!-- <hr> -->
+        <div id="imgContent">
+            <button id = "imgbutton"  @click="onClickImageItem">
+                <img :src="imageSrc" width="100px" height="120px" style="padding:10px">
+            </button>   
+            <div style="font-size:2px;margin-top:2px">（点击图片放大）</div>
+        </div>
 
         <div id = "topContent">
-            <div id="imgContent">
-                <button id = "imgbutton"  @click="onClickImageItem">
-                    <img :src="imageSrc" width="100px" height="120px" style="padding:12px">
-                </button>   
-                <div style="font-size:2px">（点击图片放大）</div>
-            </div>
-
             <div id = "leftContent">
                 <div id="wordAndBtn" style="margin-top:10px">
                     <h2 style="margin:10px;display:inline" id = "title">{{ title }}</h2>
@@ -65,18 +64,24 @@
         background-color:rgb(252, 252, 252);
         box-shadow: #2c3e50;
         text-align: center;
-        box-shadow: 6px 10px 2px #88888877;
+        box-shadow: 6px 10px 2px #9c979777;
+        position: relative;
+        top: 16px;
     }
 
     #imgContent{
-        width: 46%;
+        width: 40%;
         float: right;
         display: inline;
         padding: 0px;
+        position: relative;
+        top: 0px;
+        left: 8px;
+        z-index: 10;
     }
 
     #leftContent{
-        width: 50%;
+        width: 55%;
         float: left;
         display: inline;
         text-align: left;
@@ -88,7 +93,7 @@
         padding: 0px;
         border: 0px solid transparent;
         outline: none;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
         background-image: url('.././assets/imgBtnBg.png');
         background-size: 100% 100%;
         background-repeat:no-repeat;
