@@ -3,11 +3,11 @@
         <ul id="firstMenuList" >
             <li id="unit-li" v-for="item in unitList" :key = "item.name">
                 <button id="unitButton" @click="onClickUnit(item)">
-                   <a href="#" style="color:black"> {{item.name}}</a>
+                   <a href="#unitPage" style="color:black"> {{item.name}}</a>
                 </button>
                 <div v-for="(childItem,index) in item.lessons" :key="index">
                     <button id="lessonButton" v-if="!item.isShow" @click="onClickLesson(childItem)"> 
-                        <a href="#">{{ childItem.lesson }}</a>
+                        {{ childItem.lesson }}
                     </button>
                 </div>
             </li>
@@ -41,7 +41,7 @@
         padding: 6px;
     }
 
-    
+
 </style>
 
 <script>
@@ -63,7 +63,6 @@ export default {
             item.isShow = !item.isShow;
         },
         onClickLesson(lesson){
-            console.log(lesson)
             this.$router.push({name:'WordList',params:{selectedlesson:lesson.id}})
         },
     },
