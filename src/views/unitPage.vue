@@ -42,7 +42,8 @@
     }
 
     body{
-         background-image: url('.././assets/P4.png');
+        /* background-image: url('.././assets/P4.png');  */
+         background: #ffffff
     }
 </style>
 
