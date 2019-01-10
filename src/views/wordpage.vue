@@ -36,6 +36,7 @@
             <iframe height=auto width=auto :src='url' frameborder="0 'allowfullscreen'"></iframe>
             </mt-popup>
         </div>
+        
         <div class="clear" style="clear:both"></div>
         <div id = "bottomPuzzle" v-if="!isFinishPuzzle">
             <div id = "bottomContent">
@@ -185,7 +186,7 @@ export default {
             explain:"all the time or very many times asdasdasdasdfsdfsdfsfghghhhhhhsdasdasd",
             katongImage:"./static/logo.png",
             url:'http://player.youku.com/embed/XMzk4MDY1MjM4OA==',
-            temUrl:'http://player.youku.com/embed/XMzk4MDY1MjM4OA==',
+            temUrl:'https://v.qq.com/txp/iframe/player.html?vid=u08250w3xy5',
 
             questionImage:"./static/arrow.png",
             isDisplayFloatImage:false,       
@@ -201,12 +202,12 @@ export default {
 
     watch:{
         videoVisiblel(val){
-            console.log(val);
             if(val==false)
             {
                 this.temUrl = this.url;
                 this.url = "";
-            }else{
+            }
+            else{
                 this.url = this.temUrl;
                 this.temUrl = "";
             }

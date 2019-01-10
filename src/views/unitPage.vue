@@ -41,10 +41,7 @@
         padding: 6px;
     }
 
-    body{
-        /* background-image: url('.././assets/P4.png');  */
-         background: #ffffff
-    }
+    
 </style>
 
 <script>
