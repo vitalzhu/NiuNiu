@@ -31,6 +31,11 @@
             </div>
         </div>
 
+        <div v-if="videoVisiblel">
+            <mt-popup v-model="videoVisiblel" popup-transition="popup-fade">
+            <iframe height=auto width=auto :src='url' frameborder="0 'allowfullscreen'"></iframe>
+            </mt-popup>
+        </div>
         <div class="clear" style="clear:both"></div>
         <div id = "bottomPuzzle" v-if="!isFinishPuzzle">
             <div id = "bottomContent">
@@ -43,8 +48,9 @@
         </div>
 
         <div id = "bottomGift" v-if="isFinishPuzzle">
-            
         </div>
+
+
 
     </div>
 </template>
@@ -178,34 +184,45 @@ export default {
             translation:"总是",
             explain:"all the time or very many times asdasdasdasdfsdfsdfsfghghhhhhhsdasdasd",
             katongImage:"./static/logo.png",
+            url:'http://player.youku.com/embed/XMzk4MDY1MjM4OA==',
+            temUrl:'http://player.youku.com/embed/XMzk4MDY1MjM4OA==',
 
             questionImage:"./static/arrow.png",
             isDisplayFloatImage:false,       
             videoImag:"./static/videoIcon.png", 
             itemimgbg:"./static/imgBtnBg.png",
             isFinishPuzzle:false,
+            videoVisiblel:false,
         };
     },
     components:{
         MessageBox
     },
+
+    watch:{
+        videoVisiblel(val){
+            console.log(val);
+            if(val==false)
+            {
+                this.temUrl = this.url;
+                this.url = "";
+            }else{
+                this.url = this.temUrl;
+                this.temUrl = "";
+            }
+        }
+    },
     methods:{       
         onClickVideo(){
-            console.log("OnClickVideo")
-            MessageBox({
-            title: '',
-            message: "<iframe height=auto width=auto src='http://player.youku.com/embed/XMzk4MDY1MjM4OA==' frameborder=0 'allowfullscreen'></iframe>",
-            showCancelButton: false
-            });
+            this.videoVisiblel = !this.videoVisiblel;
         },
 
         onClickImageItem(){
-            console.log("OnClickItem")
             this.isDisplayFloatImage = !this.isDisplayFloatImage;
             MessageBox({
-            title: '',
-            message: "<img height=auto width=auto src='./static/logo.png'></img>",
-            showCancelButton: false
+                title: '',
+                message: "<img height=auto width=auto src='./static/logo.png'></img>",
+                showCancelButton: false
             });
         },
         onClickHelp(){
