@@ -13,7 +13,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/firstindex',
+      path: '/',
       name: 'firstindex',
       component: index
     },
@@ -36,11 +36,6 @@ export default new Router({
       path: '/unitPage',
       name: 'unitPage',
       component: unitPage
-    },
-    {
-      path: '/a',
-      name: 'HelloWorld',
-      component: H
     },
   ]
 })
