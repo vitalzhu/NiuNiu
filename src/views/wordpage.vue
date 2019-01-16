@@ -13,7 +13,7 @@
             <button id = "imgbutton"  @click="onClickImageItem">
                 <img :src="imageSrc" width="100px" height="120px" style="padding:10px">
             </button>   
-            <div style="font-size:2px;margin-top:2px">（点击图片放大）</div>
+            <div style="margin-top:2px">（点击图片放大）</div>
         </div>
 
         <div id = "topContent">
@@ -36,7 +36,7 @@
             <iframe height=auto width=auto :src='url' frameborder="0 'allowfullscreen'"></iframe>
             </mt-popup>
         </div>
-        
+
         <div class="clear" style="clear:both"></div>
         <div id = "bottomPuzzle" v-if="!isFinishPuzzle">
             <div id = "bottomContent">

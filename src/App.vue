@@ -12,28 +12,18 @@ export default {
 </script>
 
 <style>
-@media screen and (max-width: 1200px){
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 20px;
-    width: 350px;
-    height: 600px;
-    overflow-y: scroll;
-    background-image: url('./assets/P4.png');
-    /* border: 1px solid red */
-
+  html{
+      height: 100%;
   }
-}
-
-
-@media screen and (max-width: 500px){
   body{
-    background-image: url('./assets/P4.png');
-    
+    height: 100%;
+    background-image: url('./assets/p4.png');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-position:right top;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -41,11 +31,12 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width: 100%;
     height: 100%;
     overflow:visible;
-
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
   }
-}
 </style>

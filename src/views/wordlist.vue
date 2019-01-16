@@ -47,9 +47,6 @@
       background-color: rgba(255, 255, 255, 0);
     }
     
-    body{
-         background-image: url('.././assets/P4.png');
-    }
 </style>
 
 <script>
