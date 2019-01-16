@@ -1,7 +1,8 @@
 <template>
     <div id="list">
-        <div v-for="item in unitList" :key = "item.name">
+        <div v-for="(item,index) in unitList" :key = "item.name">
             <ul id="unit" @click="onClickUnit(item)">
+                <span style="color:#f37200">Moudle {{index+1}}</span>
                {{item.name}}
             </ul>
                         
