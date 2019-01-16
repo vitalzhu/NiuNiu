@@ -1,44 +1,47 @@
 <template>
     <div id="list">
-        <ul id="firstMenuList" >
-            <li id="unit-li" v-for="item in unitList" :key = "item.name">
-                <button id="unitButton" @click="onClickUnit(item)">
-                   <a href="#unitPage" style="color:black"> {{item.name}}</a>
-                </button>
-                <div v-for="(childItem,index) in item.lessons" :key="index">
-                    <button id="lessonButton" v-if="!item.isShow" @click="onClickLesson(childItem)"> 
+        <div v-for="item in unitList" :key = "item.name">
+            <ul id="unit" @click="onClickUnit(item)">
+               {{item.name}}
+            </ul>
+                        
+             <div v-for="(childItem,index) in item.lessons" :key="index">
+                <ul id="lesson" v-if="!item.isShow" @click="onClickLesson(childItem)"> 
                         {{ childItem.lesson }}
-                    </button>
-                </div>
-            </li>
-        </ul>
+                </ul>
+            </div>
+            </div>
     </div>
 </template>
 
 <style>
-    #unitButton{
-        margin: 0px;
-        width: 100%;
-        padding: 0px;
-        border: 1px solid transparent;
-        outline: none;
-        background-color: rgba(255, 255, 255, 0);
-        text-align: left;
-    }
 
-    #lessonButton{
-        margin: 0px;
-        padding: 0px;
-        border: 1px solid transparent;
-        outline: none;
-        width: 82%;
-        text-align: left;
-        background-color: rgba(255, 255, 255, 0);
+    #list{
+        height: 80%;
+        position: relative;
+        top: 6%;
     }
-
-    #unit-li{
-        margin: 0%;
+    #unit{
         padding: 6px;
+        margin: 4px 6px;
+        margin-bottom: 0px;
+        border: 0px;
+        height: 26px;
+        font-size: 22px;
+        text-align: left;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 0px #504f4f77;
+    }
+
+    #lesson{
+        padding: 4px;
+        margin: 2px 10px;
+        border: 0px;
+        height: 22px;
+        text-align: left;
+        
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 1px 2px 2px #3f3e3e77;
     }
 
 
