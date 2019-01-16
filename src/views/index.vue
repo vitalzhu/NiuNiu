@@ -52,7 +52,7 @@
     #level{
         color: white;
         margin: 6px;
-        background-image: url('.././assets/propertybg.png');
+        background-image: url('.././assets/p1bg.png');
         background-size: 60% 100%;
         background-repeat:no-repeat;
         background-position-x: center;
