@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="page">
     <mt-header title="">
       <router-link to="/unitPage" slot="left">
         <mt-button>
@@ -7,17 +7,16 @@
         </mt-button>
       </router-link>
     </mt-header>
-    <hr>
-
-    <ul>
-      <li id = "li" v-for="word in wordlist" :key="word.name">
+    <h6 id="tip">{{ tip }}</h6>
+    <div id="wordContainer">
+      <div id = "wordwrapper" v-for="word in wordlist" :key="word.name">
         <button id = "wordButton" @click="onClickWord(word.name)">
-            {{word.name}}
+            {{word.name}}       
         </button>
-        <hr style="margin:3px;margin-left: 0px;">
-      </li>
-    </ul>
-    <!-- <div>{{$route.params.selectedlesson}}</div> -->
+        <hr id="bottomline">
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -25,19 +24,41 @@
     #wordButton{
         margin: 0px;
         width: 100%;
-        padding: 0px;
+        height: 40px;
+        padding-left: 18px;
         border: 1px solid transparent;
         outline: none;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgb(255, 255, 255);
         text-align: left;
     }
 
-    #li{
-        margin: 0%;
-        padding-top: 8px;
-        padding-bottom: 2px;
-        border: 0px;
-        height: 20px;
+    #page{
+      height: 100%;
+    }
+
+    #tip{
+      margin: 0px;
+      margin-bottom: 6px;
+      text-align: left;
+      width: 90%;
+      position: relative;
+      left: 5%;
+      color: rgb(189, 180, 180);
+    }
+    #wordContainer{
+      width: 90%;
+      height: 86%;
+      background-color: rgb(255, 255, 255);
+      position: relative;
+      left: 5%;
+      box-shadow: 0px 1px 2px rgb(138, 134, 134);
+    }
+
+    #bottomline{
+      margin:0px;
+      margin-left:2px;
+      width:98%;
+      color:rgba(136, 134, 134, 0.747);
     }
 
     .mint-button-text{
@@ -62,6 +83,7 @@ export default {
   data() {
     return {
       selected : '1',
+      tip:'(点击词汇开始记忆)',
       wordlist: [
         { name: 'Always'},
         { name: 'Apple'},
