@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="puzzlepage">
     <mt-header title="">
         <router-link :to="{name:'wordpage',query:{ selectedword: this.word } }" slot="left">
             <mt-button>
@@ -9,7 +9,7 @@
     </mt-header>
 
     <div class="puzzleContainer">
-        <div class="page-title">Puzzle</div>
+        <p class="sentance" v-html="sentance"></p>
         <mt-radio
         class="page-part"
         :title="title"
@@ -18,36 +18,74 @@
         </mt-radio>
     </div>
 
-
-
     <div>
-      <mt-cell>{{value}}</mt-cell>
+      <!-- <label>{{value}}</label> -->
       <mt-button type="default" @click="onClickConfirm" size="large">OK</mt-button>
     </div>
   </div>
 </template>
 
 <style scope="this api replaced by slot-scope in 2.5.0+">
-  .page-checklist .page-part {
-    margin-top: 40px;
-  }
 
-  .mint-msgbox-message{
-    color:black;
-    height: 180;
-    width: 300px;
-    text-align:center;
-  }
-  .mint-msgbox{
-      width: 72%;
-  }
+    
+    .puzzleContainer{
+        background-image: url('.././assets/puzzlebg.png');
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+        background-position:center;
+        width: 90%;
+        height: 40%;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
 
-  .mint-radiolist , .page-part{
-      text-align: left;
-  }
+    .puzzlepage{
+        width: 100%;
+        height: 100%;
+    }
+    
+
+    .page-checklist .page-part {
+        margin-top: 40px;
+    }
+
+    .mint-msgbox-message{
+        color:black;
+        height: 180;
+        width: 300px;
+        text-align:center;
+    }
+    .mint-msgbox{
+        width: 72%;
+    }
+    .mint-cell{
+        background-color: none;
+        min-height: 32px;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .mint-radiolist , .page-part{
+        text-align: center;
+        margin-left:20px; 
+        margin-top: 2px;
+        padding-top: 0px;
+        width: 90%;
+    }
+
+    .sentance{
+        padding-top: 100px;
+        margin: 1px;
+        color: rgb(143, 134, 134);
+        font-size: 16px;
+    }
 
     .mint-header{
       background-color: rgba(255, 255, 255, 0);
+    }
+
+    .mint-cell:last-child{
+        background-size: 0px;
     }
 
 </style>
@@ -65,7 +103,8 @@ export default {
         return {
             optiones:[],
             word:"",
-            title:"下列哪项关于"+this.$route.query.curWord+"的描述是正确的",
+            sentance:"下列哪项关于 <span style=\"color:#f37200\">"+this.$route.query.curWord+"</span> 的描述是正确的",
+            title:"",
             value: "",
             correctValue:"B",
         };
