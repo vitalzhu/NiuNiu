@@ -9,7 +9,7 @@
     </mt-header>
 
     <div class="puzzleContainer">
-        <p class="sentance" v-html="sentance"></p>
+        <!-- <p class="sentance" v-html="sentance"></p> -->
         <mt-radio
         class="page-part"
         :title="title"
@@ -69,15 +69,15 @@
         text-align: center;
         margin-left:20px; 
         margin-top: 2px;
-        padding-top: 0px;
+        padding-top: 90px;
         width: 90%;
     }
 
     .sentance{
         padding-top: 100px;
-        margin: 1px;
+        margin: 2px;
         color: rgb(143, 134, 134);
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .mint-header{
@@ -104,7 +104,7 @@ export default {
             optiones:[],
             word:"",
             sentance:"下列哪项关于 <span style=\"color:#f37200\">"+this.$route.query.curWord+"</span> 的描述是正确的",
-            title:"",
+            title:"下列哪项关于"+this.$route.query.curWord+"的描述是正确的",
             value: "",
             correctValue:"B",
         };
