@@ -65,15 +65,15 @@
 
     #topContent
     {
-        width: 100%;
+        width: 96%;
         height: 220px;
-        /* color: #2c3e50; */
         background-color:rgb(252, 252, 252);
         box-shadow: #2c3e50;
         text-align: center;
         box-shadow: 6px 10px 2px #9c979777;
         position: relative;
         top: 16px;
+        left: 2%;
     }
 
     #imgContent{
