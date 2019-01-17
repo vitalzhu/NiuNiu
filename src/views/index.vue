@@ -6,8 +6,8 @@
           <img src = "../assets/homecover.jpg" height="260" width="200" slot="icon" style="margin-bottom:10px;margin-right:10px">
         </button>
       </div>
-      <h4 id="level">{{level}}</h4>
-      <footer id="coverfooter">{{ bottomContext }}</footer>
+      <h4 id="grade">{{grade}}</h4>
+      <div id="coverfooter">{{ bottomContext }}</div>
   </div>
 </template>
 
@@ -33,11 +33,14 @@
 
     #page{
       height: 100%;
+      width: 100%;
       background-image: url('.././assets/homebg.png');
       background-repeat:no-repeat;
-      background-size: cover;
+      background-size: 100% 100%;
       background-position:right top;
-      border: 1px solid rgba(255, 0, 0, 0);
+      position: fixed;
+      top:0px;
+      left: 0px;
     }
 
 
@@ -49,7 +52,7 @@
       width: 100%;
     }
 
-    #level{
+    #grade{
         color: white;
         margin: 6px;
         background-image: url('.././assets/p1bg.png');
@@ -70,7 +73,7 @@
       return{
         title: 'ECOW iWORDs',
         bottomContext: '特别定制版',
-        level:'七年级'
+        grade:'七年级'
       }
     },
 

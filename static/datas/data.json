@@ -38,6 +38,14 @@
                 {"id":"014","lesson":"lesson 1"},
                 {"id":"015","lesson":"lesson 5"}
             ]
+        },
+        {
+            "name":"Unit 005",
+            "isShow":"false",
+            "lessons":[
+                {"id":"016","lesson":"lesson 1"},
+                {"id":"017","lesson":"lesson 5"}
+            ]
         }
     ]
 }

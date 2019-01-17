@@ -13,10 +13,14 @@ export default {
 
 <style>
   html{
-      height: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
   }
   body{
     height: 100%;
+    width: 100%;
     background-image: url('./assets/p4.png');
     background-repeat:no-repeat;
     background-size: 100% 100%;
@@ -24,6 +28,10 @@ export default {
     padding: 0px;
     margin: 0px;
     border: 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

@@ -1,6 +1,6 @@
 <template>
     <div id="list">
-        <div v-for="(item,index) in unitList" :key = "item.name">
+        <div id="itemContainer" v-for="(item,index) in unitList" :key = "item.name">
             <ul id="unit" @click="onClickUnit(item)">
                 <span style="color:#f37200">Moudle {{index+1}}</span>
                {{item.name}}
@@ -18,9 +18,10 @@
 <style>
 
     #list{
-        height: 80%;
+        height: 90%;
         position: relative;
-        top: 6%;
+        top: 4%;
+        overflow: scroll;
     }
     #unit{
         padding: 6px;

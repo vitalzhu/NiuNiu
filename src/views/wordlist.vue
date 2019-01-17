@@ -34,6 +34,7 @@
 
     #page{
       height: 100%;
+      overflow: scroll;
     }
 
     #tip{

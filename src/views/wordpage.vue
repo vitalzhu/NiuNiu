@@ -19,7 +19,7 @@
         <div id = "topContent">
             <div id = "leftContent">
                 <div id="wordAndBtn" style="margin-top:10px">
-                    <h2 style="margin:10px;display:inline" id = "title">{{ title }}</h2>
+                    <h2 style="margin:10px;display:inline;color:#f37200" id = "title">{{ title }}</h2>
                     <button id="button" @click="onClickVideo">
                         <img :src="videoImag" alt="video" width="16px" height="16px">
                     </button>

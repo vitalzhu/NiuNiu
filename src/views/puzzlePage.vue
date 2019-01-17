@@ -7,16 +7,17 @@
             </mt-button>
         </router-link>
     </mt-header>
-    <hr>
 
-    <div class="page-title">Puzzle</div>
+    <div class="puzzleContainer">
+        <div class="page-title">Puzzle</div>
+        <mt-radio
+        class="page-part"
+        :title="title"
+        v-model="value"
+        :options="optiones">
+        </mt-radio>
+    </div>
 
-    <mt-radio
-      class="page-part"
-      :title="title"
-      v-model="value"
-      :options="optiones">
-    </mt-radio>
 
 
     <div>
@@ -48,10 +49,7 @@
     .mint-header{
       background-color: rgba(255, 255, 255, 0);
     }
-    
-    /* body{
-         background-image: url('.././assets/P4.png');
-    } */
+
 </style>
 
 <script>
