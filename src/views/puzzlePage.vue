@@ -60,7 +60,7 @@
     }
     .mint-cell{
         background-color: none;
-        min-height: 32px;
+        min-height: 34px;
         text-decoration: none;
         text-align: left;
     }
@@ -143,18 +143,18 @@ export default {
             {
                 MessageBox({
                     title:'',
-                    message:'Congratulations!',
+                    message:"<h3  style=\"color:#f37200\">Congratulations!</h3>",
                     showCancelButton:false,
                 }).then(action=>{
                     this.$storage.set(this.word,{key:'true'})
-                    this.$router.push({name:"wordpage",params:{selectedword:this.word}})
+                    this.$router.push({name:"wordpage",query:{selectedword:this.word}})
                 });
             }
             else
             {
                 MessageBox({
                     title:'',
-                    message:'Try Again!',
+                    message:"<h3 >Try again</h3>",
                     showCancelButton:false,
                 }).then(action=>{
                     this.value = '';

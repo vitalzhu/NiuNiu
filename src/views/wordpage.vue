@@ -234,7 +234,7 @@ export default {
     created:function(){
         this.title = this.$route.query.selectedword;
         const data = this.$storage.get(this.title)
-        this.isFinishPuzzle = data == null?false:true;
+        // this.isFinishPuzzle = data == null?false:true;
         this.$storage.remove(this.title)
 
         this.$http.get('static/datas/wordContent.json').then(res=>{
