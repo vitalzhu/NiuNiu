@@ -69,7 +69,7 @@
         text-align: center;
         margin-left:20px; 
         margin-top: 2px;
-        padding-top: 90px;
+        padding-top: 25%;
         width: 90%;
     }
 
