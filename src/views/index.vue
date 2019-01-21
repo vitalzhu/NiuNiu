@@ -5,8 +5,9 @@
         <button id="coverbutton" v-on:click = "clickCover"> 
           <img src = "../assets/homecover.jpg" height="260" width="200" slot="icon" style="margin-bottom:10px;margin-right:10px">
         </button>
+        <h4 id="grade">{{grade}}</h4>
       </div>
-      <h4 id="grade">{{grade}}</h4>
+
       <div id="coverfooter">{{ bottomContext }}</div>
   </div>
 </template>
@@ -22,8 +23,7 @@
         background-size: 100% 100%;
         background-repeat:no-repeat;
         background-position:right top;
-        position: relative;
-        top: 90px;
+        margin-top: 20%;
     }
 
     #pagetitle{
