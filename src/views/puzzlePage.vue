@@ -10,7 +10,7 @@
 
     <div class="puzzleContainer">
         <!-- <p class="sentance" v-html="sentance"></p> -->
-        <h1 style="padding-top:20%"><span style="color:#f37200;text-decoration:underline">Puzzle</span></h1>
+        <h1 style="padding-top:20%;margin-bottom:1px"><span style="color:#f37200;text-decoration:underline"> &nbsp;&nbsp;&nbsp;&nbsp;Puzzle &nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
         <mt-radio
         class="page-part"
         :title="title"
