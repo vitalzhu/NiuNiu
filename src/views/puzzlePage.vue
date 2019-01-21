@@ -10,6 +10,7 @@
 
     <div class="puzzleContainer">
         <!-- <p class="sentance" v-html="sentance"></p> -->
+        <h1 style="padding-top:20%"><span style="color:#f37200;text-decoration:underline">Puzzle</span></h1>
         <mt-radio
         class="page-part"
         :title="title"
@@ -27,14 +28,13 @@
 
 <style scope="this api replaced by slot-scope in 2.5.0+">
 
-    
     .puzzleContainer{
         background-image: url('.././assets/puzzlebg.png');
         background-size: 100% 100%;
         background-repeat:no-repeat;
         background-position:center;
         width: 90%;
-        height: 40%;
+        height: 50%;
         margin-left: 5%;
         margin-top: 10%;
     }
@@ -46,7 +46,8 @@
     
 
     .page-checklist .page-part {
-        margin-top: 40px;
+        margin-top: 10%;
+        
     }
 
     .mint-msgbox-message{
@@ -69,8 +70,9 @@
         text-align: center;
         margin-left:20px; 
         margin-top: 2px;
-        padding-top: 25%;
+        /* padding-top: 40%; */
         width: 90%;
+        overflow: hidden;
     }
 
     .sentance{
@@ -85,7 +87,7 @@
     }
 
     .mint-cell:last-child{
-        background-size: 0px;
+         background-size: 0px;
     }
 
 </style>
