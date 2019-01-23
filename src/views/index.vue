@@ -3,7 +3,7 @@
       <div style="height:60%">
         <h1 id = "pagetitle">{{ title }}</h1>
         <button id="coverbutton" v-on:click = "clickCover"> 
-          <img src = "../assets/homecover.jpg" height="260" width="200" slot="icon" style="margin-bottom:10px;margin-right:10px">
+          <img src = "../assets/homecover.png" height="260" width="200" slot="icon" style="margin-bottom:10px;margin-right:10px">
         </button>
         <h4 id="grade">{{grade}}</h4>
       </div>
