@@ -157,7 +157,7 @@ export default {
             {
                 MessageBox({
                     title:'',
-                    message:"<h3  style=\"color:#f37200\">Congratulations!</h3>",
+                    message:"<img height=100% width=100% src='./static/Correct.png'></img>",
                     showCancelButton:false,
                 }).then(action=>{
                     this.$storage.set(this.word,{key:'true'})
@@ -168,7 +168,7 @@ export default {
             {
                 MessageBox({
                     title:'',
-                    message:"<h3 >Try again</h3>",
+                    message:"<img height=100% width=100% src='./static/Wrong.png'></img>",
                     showCancelButton:false,
                 }).then(action=>{
                     this.value = '';
