@@ -10,7 +10,7 @@
 
     <div class="puzzleContainer">
         <!-- <p class="sentance" v-html="sentance"></p> -->
-        <h1 style="padding-top:20%;margin-bottom:1px"><span style="color:#f37200;text-decoration:underline"> &nbsp;&nbsp;&nbsp;&nbsp;Puzzle &nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
+        <h1 style="padding-top:14%;margin-bottom:1px"><span style="color:#f37200;text-decoration:underline"> &nbsp;&nbsp;&nbsp;&nbsp;Puzzle &nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
         <mt-radio
         class="page-part"
         :title="title"
@@ -20,13 +20,23 @@
     </div>
 
     <div>
-      <!-- <label>{{value}}</label> -->
-      <mt-button type="default" @click="onClickConfirm" size="large">OK</mt-button>
+      <button class = "PuzzleConfirm" @click="onClickConfirm">{{ OKText}}</button>
     </div>
   </div>
 </template>
 
 <style scope="this api replaced by slot-scope in 2.5.0+">
+
+    .PuzzleConfirm{
+        margin: 0px;
+        padding: 0px;
+        border: 0px solid transparent;
+        outline: none;
+        color: white;
+        height: 40px;
+        width: 200px;
+        background-color: rgb(255, 193, 35);
+    }
 
     .puzzleContainer{
         background-image: url('.././assets/puzzlebg.png');
@@ -34,7 +44,7 @@
         background-repeat:no-repeat;
         background-position:center;
         width: 90%;
-        height: 50%;
+        height: 44%;
         margin-left: 5%;
         margin-top: 10%;
     }
@@ -42,6 +52,7 @@
     .puzzlepage{
         width: 100%;
         height: 100%;
+        background-color: rgba(0, 0, 0, 0.603);
     }
     
 
@@ -109,6 +120,7 @@ export default {
             title:"下列哪项关于"+this.$route.query.curWord+"的描述是正确的",
             value: "",
             correctValue:"B",
+            OKText:"确定",
         };
     },
 
