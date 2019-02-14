@@ -49,6 +49,24 @@
         </div>
 
         <div id = "bottomGift" v-if="isFinishPuzzle">
+            <div id="bottomLeftGirlWrapper">
+                <img id = "bottomLeftGirl" src=".././assets/girl.png" alt="girl">
+            </div>
+            <div id="bottomRightGiftWapper">
+                 <img src=".././assets/thankYouTip.png" width="100%" height="100%" alt="">
+                 <div id = "giftBtnWrapper">
+                    <button class="giftbtn" @click="onClickFunZone">
+                        <img src=".././assets/TagFunZone.png" width="100%" height="100%" alt="">
+                    </button>
+                    <button  class="giftbtn" @click="onClickExmple">
+                        <img src=".././assets/TagExmaple.png" width="100%" height="100%" alt="">
+                    </button>
+                    <button  class="giftbtn" @click="onClickWordFamily">
+                        <img src=".././assets/TagWordFamily.png" width="100%" height="100%" alt="">
+                    </button>
+                 </div>
+
+            </div>
         </div>
 
 
@@ -149,6 +167,46 @@
         padding-left: 15px;
     }
 
+    #bottomLeftGirlWrapper{
+        margin-top: 15px;
+        margin-bottom: 20px;
+        width: 40%;
+        height: 320px;
+        display: inline;
+        float: left;
+        position: relative;
+        top: 60px;
+    }
+
+    #bottomLeftGirl{
+        width: 100%;
+    }
+
+    #bottomRightGiftWapper{
+        width: 58%;
+        float: right;
+        display: block;
+        padding: 0px;
+        position: relative;
+        top: 100px;
+    }
+
+    #giftBtnWrapper{
+        margin-left: 16%;
+    }
+
+    .giftbtn{
+        display: block;
+        margin: 4px 0;
+        padding: 0px;
+        border: 0px solid transparent;
+        outline: none;
+        color: rgb(248, 3, 3);
+        background-color: rgba(255, 255, 255, 0);
+        height: 80px;
+        width: 160px;
+    }
+
     .mint-msgbox-content {
         padding: 0px;
 
@@ -168,9 +226,9 @@
       background-color: rgba(255, 255, 255, 0);
     }
 
-    /* body{
-         background-image: url('.././assets/P4.png');
-    } */
+
+
+
 </style>
 
 <script>
@@ -229,12 +287,22 @@ export default {
         onClickHelp(){
             this.$router.push({name:"puzzle",query:{curWord:this.title}})
         },
+
+        onClickFunZone(){
+            console.log("Funzone")
+        },
+        onClickExmple(){
+
+        },
+        onClickWordFamily(){
+
+        },
     },
 
     created:function(){
         this.title = this.$route.query.selectedword;
         const data = this.$storage.get(this.title)
-        // this.isFinishPuzzle = data == null?false:true;
+        this.isFinishPuzzle = data == null?false:true;
         this.$storage.remove(this.title)
 
         this.$http.get('static/datas/wordContent.json').then(res=>{
